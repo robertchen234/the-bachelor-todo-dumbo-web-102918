@@ -47,17 +47,28 @@ def get_occupation(data, hometown)
 end
 
 def get_average_age_for_season(data, season)
-  avg = nil
   counter = 0
   sum = 0
   data[season].each do |profile|
     profile.each do |key, val|
-      if val.is_a?(Integer)
+      if key == "age"
         counter += 1
-        sum += val
-        avg = sum / counter
+        sum += val.to_i
       end
     end
   end 
-  avg
+  avg = sum / counter
 end
+
+age = 0
+count = 0
+  data[season].each do |hash|
+    hash.each do |k,v|
+      if k == "age"
+        count += 1
+        age += v.to_f
+      end
+    end
+  end
+   answer = (age/count).round
+return answer
