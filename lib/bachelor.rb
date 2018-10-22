@@ -48,12 +48,12 @@ end
 
 def get_average_age_for_season(data, season)
   avg = nil
-  count = 0
+  counter = 0
   data[season].each do |profile|
     profile.each do |key, val|
       if val.is_a?(Integer)
-        count += 1
-        avg = val.reduce(:+) / val.count
+        counter += 1
+        avg = val.reduce(:+) / counter
       end
     end
   end 
