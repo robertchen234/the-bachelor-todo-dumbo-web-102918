@@ -11,7 +11,7 @@ end
 def get_contestant_name(data, occupation)
   data.values.each do |key, val|
     if val == "Cruise Ship Singer"
-      return data.values["name"]
+      return key["name"]
     end 
   end 
 end
