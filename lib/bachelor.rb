@@ -9,11 +9,9 @@ def get_first_name_of_season_winner(data, season)
 end
 
 def get_contestant_name(data, occupation)
-  data[occupation].each do |profile|
-    profile.each do |key, val|
-      if val == "Cruise Ship Singer"
-        return profile["name"]
-      end 
+  data[occupation].each |key, val|
+    if val == "Cruise Ship Singer"
+      return profile["name"]
     end 
   end 
 end
