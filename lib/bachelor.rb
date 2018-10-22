@@ -1,5 +1,9 @@
 def get_first_name_of_season_winner(data, season)
-  [data][season[:"name"] if [data][season[:"status"] == "Winner"
+  data[season].each do |key, val|
+    if val.include?("Winner")
+      return :"name".split.first
+    end 
+  end 
 end
 
 def get_contestant_name(data, occupation)
