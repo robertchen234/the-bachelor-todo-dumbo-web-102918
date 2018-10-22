@@ -48,9 +48,11 @@ end
 
 def get_average_age_for_season(data, season)
   avg = nil
-  data[season].each do |person|
-    person["age"].each do |num|
-      avg = num.reduce(:+) / num.count
+  data[season].each do |profile|
+    profile.each do |key, val|
+      if val.Class = Integer
+        avg = val.reduce(:+) / val.count
+      end
     end
   end 
 end
