@@ -49,7 +49,7 @@ end
 def get_average_age_for_season(data, season)
   avg = nil
   data[season].each do |person|
-    person[:"age"].each do |num|
+    person["age"].each do |num|
       avg = num.reduce(:+) / num.count
     end
   end 
