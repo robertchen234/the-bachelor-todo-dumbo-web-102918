@@ -53,11 +53,11 @@ def get_average_age_for_season(data, season)
     profile.each do |key, val|
       if key == "age"
         counter += 1
-        sum += val.to_i
+        sum += val.to_f
       end
     end
   end 
-  avg = sum / counter
+  avg = (sum / counter).round
 end
 
 # age = 0
