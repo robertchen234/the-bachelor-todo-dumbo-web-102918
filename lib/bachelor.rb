@@ -12,7 +12,7 @@ def get_contestant_name(data, occupation)
   data[season].each do |profile|
     profile.each do |key, val|
       if val == "Cruise Ship Singer"
-        return profile["name"].split.first
+        return profile["name"]
       end 
     end 
   end 
